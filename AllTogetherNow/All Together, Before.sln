@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesRuntime", "ShapesRuntime.csproj", "{af5cac7c-3ad7-d686-12e6-cdbde2b3e9b1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{dd44ec10-643e-baa3-972a-0bcdb26c7932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesEditor", "ShapesEditor.csproj", "{32dd16aa-8d92-ab77-d4cd-3b42a62a8121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{af5cac7c-3ad7-d686-12e6-cdbde2b3e9b1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{af5cac7c-3ad7-d686-12e6-cdbde2b3e9b1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{dd44ec10-643e-baa3-972a-0bcdb26c7932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dd44ec10-643e-baa3-972a-0bcdb26c7932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32dd16aa-8d92-ab77-d4cd-3b42a62a8121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32dd16aa-8d92-ab77-d4cd-3b42a62a8121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

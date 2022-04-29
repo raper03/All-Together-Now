@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Instruments
+  m_EditorClassIdentifier: 
+  m_GroupName: Instruments
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 889f5be6e2d534fe9afaad7c492ee0a5
+  m_SerializeEntries:
+  - m_GUID: ac848bca6e1fd4accbf1fc02c3e210cd
+    m_Address: Assets/Script/Player/Prefabs/P_Pianist.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f3a6261f787f741eba12aa69e59389fa
+    m_Address: Assets/Script/Player/Prefabs/P_Drummer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 721e7b2ea9a4c4d689bc04cb3aa3e420, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e42fbc249272e4d20bdf0eb246f057c8, type: 2}
+    - {fileID: 11400000, guid: f8f30d2677bf44f0498fa72584bd494e, type: 2}

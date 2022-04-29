@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555db4071c10d4d00a98cab27ea7ea88, type: 3}
+  m_Name: Pianist
+  m_EditorClassIdentifier: 
+  notes:
+  - {fileID: 8300000, guid: afecd6d2ef648431eaff3ef083d6d3b4, type: 3}
+  - {fileID: 8300000, guid: eb8cfe1c2d97345e891de9936172b577, type: 3}
+  - {fileID: 8300000, guid: 5ea999d857dee4cbc910d1b5edb70780, type: 3}
+  - {fileID: 8300000, guid: a41e90b1def744457bf1a12aaa7f2eff, type: 3}
+  - {fileID: 8300000, guid: b7048beb36ee143308913c25d0e4eb19, type: 3}
+  - {fileID: 8300000, guid: 63e356703ec56426790c630690d27ef5, type: 3}
+  - {fileID: 8300000, guid: 3f3efdb3707a54c91a8e1821f2938a78, type: 3}
+  - {fileID: 8300000, guid: 5ca4f7bed5f7f4ae4ba499d34f29e9c0, type: 3}
+  - {fileID: 8300000, guid: d33ac56cdd2db4ca5a230036c07b830f, type: 3}
+  Instrument: Piano
