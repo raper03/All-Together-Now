@@ -9,6 +9,9 @@ public struct LineLength
     public Vector2 end;
 	public float thickness;
 }
+/// <summary>
+/// Draws the lines to make bars of a staff.
+/// </summary>
 [ExecuteAlways] public class UIBars : ImmediateModeShapeDrawer {
 
     public Transform crosshairTransform;

@@ -26,7 +26,7 @@ public class StaffEditor : MonoBehaviour
     private Player _currentPlayer;
     private bool refresh = true;
     private Drag drag = Drag.Whole;
-    public void Start()
+    public void Awake()
     {
         UIBars grid = GetComponent<UIBars>();
         frame_size = new Vector4(grid.x_lines[0].end.x, grid.y_lines[0].start.y, grid.y_lines[0].end.x, grid.y_lines[0].end.y);
@@ -51,12 +51,11 @@ public class StaffEditor : MonoBehaviour
 
         }
 
-        FinishInit?.Invoke();
+        
     }
+    
+    public void Start() => FinishInit?.Invoke();
 
-    public void Engage(){
-
-    }
     public void Join(Player player)
     {
         _currentPlayer = player;

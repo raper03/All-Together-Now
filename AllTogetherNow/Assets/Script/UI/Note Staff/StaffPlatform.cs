@@ -1,25 +1,29 @@
 using System;
 using UnityEngine;
 using System.Collections;
+
+/// </summary>
+/// Responsible for communicating players with the staff.
+/// <summary>
 public class StaffPlatform : MusicPlatform
 {
     private StaffEditor writer;
     private StaffReader reader;
     public Action FinishInit;
-    public void Start()
+    public void Awake()
     {
         
-        writer = GetComponent<StaffEditor>();
+        writer = transform.parent.GetComponentInChildren<StaffEditor>();
         reader = GetComponent<StaffReader>();
-
+        Debug.Log(writer);
         writer.FinishInit += () =>
         {
             writer.rowEdit += Write;
-            FinishInit?.Invoke();
         };   
         
     }
 
+    public void Start() => FinishInit?.Invoke();
     public override MusicPlatform Join(Player client)
     {
         Debug.Log(writer);

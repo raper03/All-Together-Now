@@ -12,12 +12,6 @@ using TMPro;
     
     public float BPM;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public override void DrawShapes(Camera cam)
     {
         using ( Draw.Command(cam) )

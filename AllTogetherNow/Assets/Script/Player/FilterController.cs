@@ -19,7 +19,7 @@ public class FilterController : MonoBehaviour
     public bool playing;
 
 
-    public void Start() 
+    public void Awake() 
     {
 
         sample_offset = 0;
@@ -37,21 +37,21 @@ public class FilterController : MonoBehaviour
 
         // initializing dummy buffer
         StaffReader reader = transform.parent.GetComponentInChildren<StaffReader>();
-        float length = (float)((60f / reader.BPM) * reader.bars);
-        if(staff != null && reader != null ){            
-            Debug.LogFormat("BPM: {0}, BARS: {1}, LENGTH: {2}", reader.BPM, reader.bars, length);
-        }
+        reader.FinishInit += () => {
+            float length = (float)((60f / reader.BPM) * reader.bars);
+            float _sampleRate = 48000;
+            float _songLength = (float)((60 / reader.BPM) * reader.bars);
+            buffer_length = Mathf.CeilToInt( _sampleRate * length) * 2;
+            dummy_PCMBuffer = new float[buffer_length];
 
-        float _sampleRate = 48000;
-        float _songLength = (float)((60 / reader.BPM) * reader.bars);
-        buffer_length = Mathf.CeilToInt( _sampleRate * length) * 2;
-        Debug.Log("buffer_length: " + buffer_length);
-        dummy_PCMBuffer = new float[buffer_length];
+            Debug.LogFormat("BPM: {0}, BARS: {1}, LENGTH: {2}", reader.BPM, reader.bars, length);
+            Debug.Log("buffer_length: " + buffer_length);
+        };
         
     }
+
     public void PlayInternal(float volume, float position)
     {
-        Debug.Log("beginning playback");
         source.volume = volume;
         source.Play();
         playing = true;
@@ -65,7 +65,6 @@ public class FilterController : MonoBehaviour
 
             if(i + sample_offset >= buffer_length){ 
                 sample_offset = 0;
-                Debug.Log("over");
             }
         }
         

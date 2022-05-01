@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Empty Stage.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 0
+    path: Assets/Scenes/Stress Test.unity
+    guid: 4270bceecff8c40ba8c04346ed990d18
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: fd6f82c7be29f4baf8fb0ac7e8d71138, type: 2}

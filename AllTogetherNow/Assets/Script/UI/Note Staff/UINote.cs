@@ -14,7 +14,9 @@ public class Lengths
         this.end = end;
     }
 }
-
+/// <summary>
+/// Creates note nodes that resemble white bars to draw on the staff.
+/// </summary>
 [ExecuteAlways] public class UINote : ImmediateModeShapeDrawer
 {
     
@@ -101,21 +103,7 @@ public class Lengths
             Draw.Radius = 0.03f;
             if(!Application.isPlaying) return;
             
-            float alpha = 0.75f;
-
-/*                 if(Application.isPlaying && noteAdded)
-                {
-                    float newTime = (Time.time - fl);
-                    
-                    alpha = curve.Evaluate(Mathf.Clamp01(newTime / 1f));
-                    if(newTime > 1f)
-                    {
-                        notesAccountedFor = Lengths.Count + 1;
-                        newTime = 0f;
-                    } 
-                }
- */
-                
+            float alpha = 0.75f;                
 
             for(int i = 0; i < drawn_notes.Count; i++){
                 

@@ -33,7 +33,9 @@ public struct Bus
     }
 }
 
-
+/// <summary>
+/// Player note "repo" that contains information of player's audio data and Note placements.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class Notation : MonoBehaviour
 {
@@ -155,6 +157,7 @@ public class Notation : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
+        // TODO: Move out to player script or its own script to respect SRP
         int currentPos = (int)AudioSettings.dspTime * _sampleRate;
         int nextSample = data.Length;
         for(int i = 0; i < data.Length; i++){

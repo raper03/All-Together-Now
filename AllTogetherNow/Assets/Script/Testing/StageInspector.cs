@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This script performs a stress test for All Together, Now:
+/// TESTING SCRIPT. This script performs a stress test for All Together, Now:
 ///     <para>Checks for existing members in scene,</para>
 ///     <para>Generates sample data for each member,</para>
 ///     <para>Subscribes them to the staff platform to allow play,</para>
@@ -14,10 +14,6 @@ public class StageInspector : MonoBehaviour
     private float startTime;
     private float endTime;
     
-    void Awake()
-    {
-
-    }
     void Start()
     {
         startTime = Time.realtimeSinceStartup;

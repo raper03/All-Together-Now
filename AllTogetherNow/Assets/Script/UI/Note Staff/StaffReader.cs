@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Reads essential information from the "Staff View"
+/// </summary>
 public class StaffReader : MonoBehaviour
 {
     
@@ -18,22 +21,25 @@ public class StaffReader : MonoBehaviour
     public float currentPosition {get; private set;}
     public Vector4 staffLength;
     public Rect frame;
-
+    public Action FinishInit;
     
-    public void Start()
+    public void Awake()
     {
 
         staff = GetComponent<StaffEditor>();
         scroll = GetComponentInChildren<ScrollEditor>();
-        staff.FinishInit += () => 
+        staff.FinishInit += () =>
         {
             BPM = 120;
             bars = 16;
             scroll.ScrollPositionChanged += (float position) => currentPosition = position;
             staffLength = staff.frame_size;
             frame = staff.actual_frame_size;
+            FinishInit?.Invoke();
         };
 
+
     }
+
    
 }

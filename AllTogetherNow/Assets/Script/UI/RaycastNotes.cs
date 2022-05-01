@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Interface for objects that can handle click and key input from player.
+/// </summary>
 public interface IHandleClick
 {
     public InputLockMode HandleClick(RaycastHit hit, Vector3 mousePosition, int button);
@@ -10,6 +13,9 @@ public interface IHandleClick
     public InputLockMode HandleClickOff(RaycastHit hit, Vector3 mousePosition, int button);
     public void HandleKeyAction(string Key, Vector3 mousePosition);
 }
+/// <summary>
+/// Enum to allow player to move mouse freely
+/// </summary>
 public enum InputLockMode
 {
     Unlocked,
@@ -49,6 +55,9 @@ public class RaycastNotes : MonoBehaviour
         Ray StaffRay = StaffCamera.ScreenPointToRay(Input.mousePosition);
         Ray StageRay = StageCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        
+        // Detect RaycastHit from the staff camera.
+        // If detected, check for Clicker interface.
         if(Physics.Raycast(StaffRay, out hit, 1000f, LayerMask.GetMask("UI"), QueryTriggerInteraction.Ignore))
         {
             
@@ -58,6 +67,8 @@ public class RaycastNotes : MonoBehaviour
             }  
         }
 
+        // Detect RaycastHit from the stage camera.
+        // If detected, check for Clicker interface.
         else if(Physics.Raycast(StageRay, out hit, 1000f, LayerMask.GetMask("OrchestraMember"), QueryTriggerInteraction.Ignore))
         {
             if(hit.collider.TryGetComponent<IHandleClick>(out IHandleClick clicker))
@@ -68,8 +79,9 @@ public class RaycastNotes : MonoBehaviour
 
     }
 
-        void HandleClicker(Ray ray, RaycastHit hit, IHandleClick clicker)
+    void HandleClicker(Ray ray, RaycastHit hit, IHandleClick clicker)
     {
+        // handle click object
         if(currentClicker != null) clicker = currentClicker;
         
 

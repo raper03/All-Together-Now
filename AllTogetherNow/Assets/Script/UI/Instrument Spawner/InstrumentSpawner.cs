@@ -4,16 +4,13 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
+/// <summary>
+/// Responsible for spawning instruments into the scene.
+/// </summary>
 public class InstrumentSpawner : MonoBehaviour
 {
-    // Responsible for spawning instruments into the scene.
+    // 
     
-    /*
-        List of instruments:
-            Drums
-            Piano
-            Microphone?
-    */
     [SerializeField] private List<AssetReference> addressables;
     [SerializeField] private Camera StageCamera;
 
@@ -36,14 +33,15 @@ public class InstrumentSpawner : MonoBehaviour
         if(assetReference.RuntimeKeyIsValid() == false) return;
 
         Load(assetReference);
-        //Initiate prefab, may take a while, probably create a coroutine to let it load while it waits
-        //from Stage Camera, Instantiate object on Terrain layer,
-        
-        //  if click off before allowed, cancel spawn.
-        //if no terrain, default into showing a image of the player on the staff camera.
-        //  if never touch terrain layer, cancel spawn
     }
 
+    public void SpawnInstrument(AssetReference addressable)
+    {
+        if(!addressables.Contains(addressable)) return;
+
+        AssetReference assetReference = addressables[addressables.IndexOf(addressable)];
+        Load(assetReference);
+    }
     private void Load(AssetReference af)
     {
         Debug.Log("loading");
@@ -54,11 +52,11 @@ public class InstrumentSpawner : MonoBehaviour
             valid_instruments[result] = af;
             placement_process = PlaceInEnvironment(StageCamera, result);
             StartCoroutine(placement_process);
-            //StopCoroutine(HoldOn);
+        
         
             
         };
-        //StartCoroutine(HoldOn);
+        
     }
 
     private IEnumerator PlaceInEnvironment(Camera stage, GameObject instrument)
@@ -73,18 +71,15 @@ public class InstrumentSpawner : MonoBehaviour
             
             if(hit_environment){
                 successful_placement = true;
-                Debug.Log("hit environment");
                 player.transform.position = environment_hit.point + (environment_hit.normal * 0.5f);
             }
             else{
                 successful_placement = false;
-                
                 player.transform.position = stage_point.origin + (stage_point.direction * 3);
-                
 
             }
             
-            //if hit //do stuff //else default to certain distance
+            
             yield return null;
         }
 
